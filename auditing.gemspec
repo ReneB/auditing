@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name    = "auditing"
   
   # Do not set the version and date field manually, this is done by the release script
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.date    = "2011-12-27"
 
   s.summary     = "auditing"
