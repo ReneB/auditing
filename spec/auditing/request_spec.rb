@@ -12,13 +12,13 @@ module AuditingRequestSpecHelper
       retrieved_request['params']['test_param2'].should                    == stored_request.params['test_param2']
       retrieved_request['user_id'].should                                  == stored_request.user_id
       retrieved_request['real_user_id'].should                             == stored_request.real_user_id
-      retrieved_request['at'].gmtime.to_s.should                                  == stored_request.at.gmtime.to_s
+      retrieved_request['at'].getlocal.to_s.should                                  == stored_request.at.getlocal.to_s
     else
       retrieved_request.url.should == stored_request.url
       retrieved_request.method.should == stored_request.method
       retrieved_request.user_id.should == stored_request.user_id
       retrieved_request.real_user_id.should == stored_request.real_user_id
-      retrieved_request.at.should == stored_request.at
+      retrieved_request.at.getlocal.to_s.should == stored_request.at.getlocal.to_s
     end
   end
 
@@ -33,7 +33,7 @@ module AuditingRequestSpecHelper
         stored_mods.changes[k].should == v
       end
       retrieved_mods['action'].should == stored_mods.action
-      retrieved_mods['at'].to_s.should == stored_mods.at.to_time.to_s
+      retrieved_mods['at'].getlocal.to_s.should == stored_mods.at.getlocal.to_s
     else
       retrieved_mods._id.should == stored_mods._id
       retrieved_mods.request_id.should == (stored_mods.request_id ? stored_mods.request_id : "")
@@ -43,7 +43,7 @@ module AuditingRequestSpecHelper
         stored_mods.changes[key].should == value
       end
       retrieved_mods.action.should == stored_mods.action
-      retrieved_mods.at.should == stored_mods.at.to_time
+      retrieved_mods.at.getlocal.to_s.should == stored_mods.at.getlocal.to_s
     end
   end
 end

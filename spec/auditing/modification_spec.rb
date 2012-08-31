@@ -12,7 +12,7 @@ module AuditingModificationSpecHelper
         stored_mods.changes[k].should == v
       end
       retrieved_mods['action'].should == stored_mods.action
-      retrieved_mods['at'].should == stored_mods.at.to_time
+      retrieved_mods['at'].getlocal.to_s.should == stored_mods.at.getlocal.to_s
     else
       retrieved_mods._id.should == stored_mods._id
       retrieved_mods.request_id.should == (stored_mods.request_id ? stored_mods.request_id : nil)
@@ -22,7 +22,7 @@ module AuditingModificationSpecHelper
         stored_mods.changes[key].should == value
       end
       retrieved_mods.action.should == stored_mods.action
-      retrieved_mods.at.should == stored_mods.at.to_time
+      retrieved_mods.at.getlocal.to_s.should == stored_mods.at.getlocal.to_s
     end
   end
 end
