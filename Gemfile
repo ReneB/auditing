@@ -7,7 +7,7 @@ source "http://rubygems.org"
 # Include everything needed to run rake, tests, features, etc.
 gem "bundler", "> 1.0.0"
 gem "rake"
-gem "mordor"
+gem "mordor", :git => "https://github.com/ReneB/mordor.git"
 
 group :test do
   gem "rspec", "~> 2.0"

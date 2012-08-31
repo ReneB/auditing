@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'mongo'
-require 'extlib'
 require 'mordor'
 require 'auditing/version'
 require 'auditing/request'
