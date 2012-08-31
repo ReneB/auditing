@@ -14,11 +14,11 @@ module AuditingRequestSpecHelper
       retrieved_request['real_user_id'].should                             == stored_request.real_user_id
       retrieved_request['at'].gmtime.to_s.should                                  == stored_request.at.gmtime.to_s
     else
-      retrieved_request.url == stored_request.url
-      retrieved_request.method == stored_request.method
-      retrieved_request.user_id == stored_request.user_id
-      retrieved_request.real_user_id == stored_request.real_user_id
-      retrieved_request.at == stored_request.at
+      retrieved_request.url.should == stored_request.url
+      retrieved_request.method.should == stored_request.method
+      retrieved_request.user_id.should == stored_request.user_id
+      retrieved_request.real_user_id.should == stored_request.real_user_id
+      retrieved_request.at.should == stored_request.at
     end
   end
 
